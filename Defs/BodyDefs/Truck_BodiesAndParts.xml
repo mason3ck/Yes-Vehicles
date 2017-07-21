@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>Truck_Body</defName>
+    <label>body</label>
+    <hitPoints>70</hitPoints>
+    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <skinCovered>false</skinCovered>
+    <isSolid>true</isSolid>
+    <isAlive>false</isAlive>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Truck_Cabin</defName>
+    <label>cabin</label>
+    <hitPoints>40</hitPoints>
+    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <skinCovered>false</skinCovered>
+    <isSolid>true</isSolid>
+    <isAlive>false</isAlive>
+    <tags>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+      <li>ConsciousnessSource</li>
+    <li>DriverSeat</li>
+    <li>PassengerSeat</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+   <defName>Truck_Engine</defName>
+   <label>engine</label>
+   <hitPoints>30</hitPoints>
+   <oldInjuryBaseChance>0</oldInjuryBaseChance>
+   <skinCovered>false</skinCovered>
+   <isSolid>true</isSolid>
+   <isAlive>false</isAlive>
+   <tags>
+     <li>BreathingPathway</li>
+     <li>EatingPathway</li>
+     <li>TalkingPathway</li>
+   </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Truck_Transmission</defName>
+    <label>transmission</label>
+    <hitPoints>30</hitPoints>
+    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <skinCovered>false</skinCovered>
+    <isSolid>true</isSolid>
+    <isAlive>false</isAlive>
+    <tags>
+    <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+   <defName>Fuel_Tanks</defName>
+   <label>fuel</label>
+   <hitPoints>10</hitPoints>
+   <oldInjuryBaseChance>0</oldInjuryBaseChance>
+   <skinCovered>false</skinCovered>
+   <isSolid>true</isSolid>
+   <isAlive>false</isAlive>
+   <tags>
+     <li>EatingPathway</li>
+   </tags>
+ </BodyPartDef>
+
+ <BodyPartDef>
+  <defName>Wheel_Truck_LFDrive</defName>
+  <label>wheel</label>
+  <hitPoints>15</hitPoints>
+  <oldInjuryBaseChance>0</oldInjuryBaseChance>
+  <skinCovered>false</skinCovered>
+  <isSolid>true</isSolid>
+  <isAlive>false</isAlive>
+  <tags>
+    <li>MovingLimbCore</li>
+  </tags>
+</BodyPartDef>
+
+<BodyPartDef>
+ <defName>Wheel_Truck_RFDrive</defName>
+ <label>wheel</label>
+ <hitPoints>15</hitPoints>
+ <oldInjuryBaseChance>0</oldInjuryBaseChance>
+ <skinCovered>false</skinCovered>
+ <isSolid>true</isSolid>
+ <isAlive>false</isAlive>
+ <tags>
+   <li>MovingLimbCore</li>
+ </tags>
+</BodyPartDef>
+
+<BodyPartDef>
+ <defName>Wheel_Truck_LB</defName>
+ <label>wheel</label>
+ <hitPoints>15</hitPoints>
+ <oldInjuryBaseChance>0</oldInjuryBaseChance>
+ <skinCovered>false</skinCovered>
+ <isSolid>true</isSolid>
+ <isAlive>false</isAlive>
+ <tags>
+   <li>MovingLimbSegment</li>
+ </tags>
+</BodyPartDef>
+
+<BodyPartDef>
+ <defName>Wheel_Truck_RB</defName>
+ <label>wheel</label>
+ <hitPoints>15</hitPoints>
+ <oldInjuryBaseChance>0</oldInjuryBaseChance>
+ <skinCovered>false</skinCovered>
+ <isSolid>true</isSolid>
+ <isAlive>false</isAlive>
+ <tags>
+   <li>MovingLimbSegment</li>
+ </tags>
+</BodyPartDef>
+
+<!-- ===== Truck Body ===== -->
+  <BodyDef>
+    <defName>Truck_Body</defName>
+    <label>Truck</label>
+    <corePart>
+      <def>Truck_Body</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Truck_Engine</def>
+          <coverage>0.1</coverage>
+          <depth>Inside</depth>
+          <height>Bottom</height>
+        </li>
+
+        <li>
+          <def>Truck_Transmission</def>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+          <height>Bottom</height>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+
+        <li>
+          <def>Truck_Cabin</def>
+          <coverage>0.3</coverage>
+        </li>
+
+        <li>
+          <def>Wheel_Truck_LFDrive</def>
+          <coverage>0.01</coverage>
+          <height>Bottom</height>
+        </li>
+
+        <li>
+          <def>Wheel_Truck_RFDrive</def>
+          <coverage>0.01</coverage>
+          <height>Bottom</height>
+        </li>
+
+        <li>
+          <def>Wheel_Truck_LB</def>
+          <coverage>0.01</coverage>
+          <height>Bottom</height>
+        </li>
+
+        <li>
+          <def>Wheel_Truck_RB</def>
+          <coverage>0.01</coverage>
+          <height>Bottom</height>
+        </li>
+
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

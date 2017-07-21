@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Yes, Vehicles</name>
+	<author>Mason J. Caboose</author>
+	<targetVersion>0.17.0</targetVersion>
+	<description>V 1.0
+   A hopeful succesfull implementation of vehicles into RimWorld!
+
+First off, a big thank you to Jecrell, without him none of you would have this!
+
+This mod is a 'simple' implementation of a truck into our lovely rim world, you can load passengers, as well as equipment for both crossing the map and for caravanning.
+
+To acquire a truck you need to research Machining and Smithing to acquire the Vehicle Table. Here you can construct a box filled with vehicular pieces.
+After following guides 1-Z on your ikea manual and throwing away the last 5 screws your pawn will have succesfully assembled a working scrap heap!
+
+Just like any partially oiled machine, youll have to fill and power it with Chemfuel! (not included)
+
+Upon assigning a driver, you must instruct the vehicle to draft itself for glorious duty.
+
+*Disclaimer* If your goal is caravanning, please ensure the loaded driver drives said vehicle to the edge of the map.
+
+Bugs will be plenty in this mod, but hopefully that'll to break your game!
+		</description>
+</ModMetaData>

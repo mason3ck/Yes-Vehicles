@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <RecipeDef>
+    <defName>MakeVehicleTruck</defName>
+    <label>make truck</label>
+    <description>Craft a motorized truck for hauling long distances</description>
+    <jobString>Making truck.</jobString>
+    <workSpeedStat>SmithingSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>10000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Vehicle_TruckParts>1</Vehicle_TruckParts>
+    </products>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+</RecipeDefs>
