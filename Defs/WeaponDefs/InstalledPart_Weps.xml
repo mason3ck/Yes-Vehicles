@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+<!-- General Bases -->
+
+<ThingDef Abstract="True" Name="Vehicle_BaseWeapon">
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<equipmentType>Primary</equipmentType>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>10</pathCost>
+		<selectable>true</selectable>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>-6</Beauty>
+			<SellPriceFactor>0.40</SellPriceFactor>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+	</ThingDef>
+
+  <ThingDef Name="Vehicle_GunBase" Abstract="True" ParentName="Vehicle_BaseWeapon">
+		<techLevel>Industrial</techLevel>
+		<smeltable>true</smeltable>
+		<thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>ArtName_WeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+  </ThingDef>
+
+	<!--Bullet types -->
+
+	  <ThingDef ParentName="BaseBullet">
+	    <defName>Cannon_Shell</defName>
+	    <label>Cannon shell</label>
+	    <graphicData>
+	      <texPath>Weps/Projectiles/Cannon_Shell</texPath>
+	      <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>TransparentPostLight</shaderType>
+	  </graphicData>
+	    <projectile>
+		<flyOverhead>False</flyOverhead>
+		<damageDef>Bomb</damageDef>
+		<damageAmountBase>79</damageAmountBase>
+		<speed>125</speed>
+	    </projectile>
+	  </ThingDef>
+
+		 <ThingDef ParentName="BaseBullet">
+		    <defName>Dense_Shell</defName>
+		    <label>Dense shell</label>
+		    <graphicData>
+		      <texPath>Weps/Projectiles/Dense_Shell</texPath>
+		      <graphicClass>Graphic_Single</graphicClass>
+			  <shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		    <projectile>
+			<flyOverhead>False</flyOverhead>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>70</damageAmountBase>
+			<speed>205</speed>
+		    </projectile>
+		  </ThingDef>
+
+			 <ThingDef ParentName="BaseBullet">
+			    <defName>Small_Bullet</defName>
+			    <label>Small bullet</label>
+			    <graphicData>
+			      <texPath>Weps/Projectiles/Bullet_Small</texPath>
+			      <graphicClass>Graphic_Single</graphicClass>
+				  <shaderType>TransparentPostLight</shaderType>
+			  </graphicData>
+			    <projectile>
+				<flyOverhead>False</flyOverhead>
+				<damageDef>Bullet</damageDef>
+				<damageAmountBase>46</damageAmountBase>
+				<speed>105</speed>
+			    </projectile>
+			  </ThingDef>
+
+<!-- Specific gun bases, important to alocate graphics -->
+
+  <ThingDef Name="Infantry_TurretBase" ParentName="Vehicle_GunBase" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>VehicleTable</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+    <comps>
+      <li Class="CompInstalledPart.CompProperties_InstalledPart">
+	        <allowedToInstallOn>
+	  	      <li>Truck</li>
+						<li>Tank</li>
+		      </allowedToInstallOn>
+					<installedWeaponGraphic>
+							<texPath>Weps/Turrets/Infantry_Turret</texPath>
+				      <graphicClass>Graphic_Single</graphicClass>
+							<drawSize>6</drawSize>
+					  <shaderType>TransparentPostLight</shaderType>
+					</installedWeaponGraphic>
+	    	<workToInstall>500</workToInstall>
+        <workToUninstall>500</workToUninstall>
+				<workEffect>Repair</workEffect>
+	   </li>
+     </comps>
+  </ThingDef>
+
+    <ThingDef Name="Tank_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>VehicleTable</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+     <comps>
+        <li Class="CompInstalledPart.CompProperties_InstalledPart">
+	         <allowedToInstallOn>
+	  	       <li>Tank</li>
+		        </allowedToInstallOn>
+						<installedWeaponGraphic>
+							<texPath>Weps/Turrets/Tank_Cannon</texPath>
+				      <graphicClass>Graphic_Single</graphicClass>
+							<drawSize>6</drawSize>
+					  <shaderType>TransparentPostLight</shaderType>
+					</installedWeaponGraphic>
+	    	<workToInstall>500</workToInstall>
+        <workToUninstall>500</workToUninstall>
+				<workEffect>Repair</workEffect>
+	   </li>
+		 <li>
+		  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+	   </li>
+ </comps>
+  </ThingDef>
+
+	    <ThingDef Name="Rail_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
+	    <recipeMaker>
+	      <workSpeedStat>SmithingSpeed</workSpeedStat>
+	      <workSkill>Crafting</workSkill>
+	      <effectWorking>Smith</effectWorking>
+	      <soundWorking>Recipe_Smith</soundWorking>
+	      <recipeUsers>
+	        <li>VehicleTable</li>
+	      </recipeUsers>
+	      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+	    </recipeMaker>
+	     <comps>
+	        <li Class="CompInstalledPart.CompProperties_InstalledPart">
+		         <allowedToInstallOn>
+		  	       <li>Tank</li>
+			        </allowedToInstallOn>
+							<installedWeaponGraphic>
+								<texPath>Weps/Turrets/Rail_Cannon</texPath>
+					      <graphicClass>Graphic_Single</graphicClass>
+								<drawSize>6</drawSize>
+						  <shaderType>TransparentPostLight</shaderType>
+						</installedWeaponGraphic>
+		    	<workToInstall>500</workToInstall>
+	        <workToUninstall>500</workToUninstall>
+					<workEffect>Repair</workEffect>
+		   </li>
+			 <li>
+			  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		   </li>
+		 </comps>
+	  </ThingDef>
+
+<!-- actual Gun defs -->
+
+    <ThingDef ParentName="Tank_CannonBase">
+    <defName>Tank_Cannon</defName>
+    <label>Tank cannon</label>
+    <description>A powerful cannon for use on a tank, capable of sending exploding shells accurately at the enemy.</description>
+    <graphicData>
+      <texPath>Box/Tank_Cannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <statBases>
+      <Mass>6.85</Mass>
+      <MarketValue>3200</MarketValue>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.79</AccuracyMedium>
+      <AccuracyLong>0.69</AccuracyLong>
+      <RangedWeapon_Cooldown>5.32</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>200</Steel>
+      <Plasteel>50</Plasteel>
+      <Component>10</Component>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Cannon_Shell</projectileDef>
+        <warmupTime>2.03</warmupTime>
+        <range>50</range>
+        <soundCast>PJ_ATST_Gun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>50</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+	   <li>Tank_Cannon</li>
+    </weaponTags>
+  </ThingDef>
+
+
+
+    <ThingDef ParentName="Rail_CannonBase">
+    <defName>Rail_Cannon</defName>
+    <label>Rail cannon</label>
+    <description>A pin point cannon capable of delivering a dense round down the battlefield quickly.</description>
+    <graphicData>
+      <texPath>Box/Rail_Cannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <statBases>
+      <Mass>7.85</Mass>
+      <MarketValue>5200</MarketValue>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.84</AccuracyMedium>
+      <AccuracyLong>0.73</AccuracyLong>
+      <RangedWeapon_Cooldown>4.55</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <Plasteel>80</Plasteel>
+      <Component>15</Component>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Dense_Shell</projectileDef>
+        <warmupTime>3.53</warmupTime>
+        <range>60</range>
+        <soundCast>PJ_ATST_Gun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>42</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+	   <li>Rail_Cannon</li>
+    </weaponTags>
+  </ThingDef>
+
+    <ThingDef ParentName="Infantry_TurretBase">
+    <defName>Infantry_Turret</defName>
+    <label>Infantry turret</label>
+    <description>A rapid fire cannon for light armor or infantry.</description>
+    <graphicData>
+      <texPath>Box/Infantry_Turret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>InteractPistol</soundInteract>
+    <statBases>
+      <Mass>6.85</Mass>
+      <MarketValue>3200</MarketValue>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.79</AccuracyMedium>
+      <AccuracyLong>0.69</AccuracyLong>
+      <RangedWeapon_Cooldown>1.32</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Component>5</Component>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Small_Bullet</projectileDef>
+        <warmupTime>1.03</warmupTime>
+        <range>30</range>
+        <soundCast>PJ_ATST_Gun</soundCast>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+	   <li>Infantry_Turret</li>
+    </weaponTags>
+  </ThingDef>
+</ThingDefs>

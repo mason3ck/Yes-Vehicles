@@ -13,17 +13,36 @@
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>Truck_Body</defName>
+    <defName>Tank_Hull</defName>
     <label>body</label>
-    <hitPoints>70</hitPoints>
+    <hitPoints>200</hitPoints>
     <oldInjuryBaseChance>0</oldInjuryBaseChance>
     <skinCovered>false</skinCovered>
     <isSolid>true</isSolid>
     <isAlive>false</isAlive>
+    <tags>
+    <li>DriverSeat</li>
+      <li>HearingSource</li>
+      <li>ConsciousnessSource</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>Truck_Cabin</defName>
+    <defName>Tank_Viewport</defName>
+    <label>viewport</label>
+    <hitPoints>20</hitPoints>
+    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <skinCovered>false</skinCovered>
+    <isSolid>true</isSolid>
+    <isAlive>false</isAlive>
+    <tags>
+    <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Tank_Turret</defName>
     <label>cabin</label>
     <hitPoints>40</hitPoints>
     <oldInjuryBaseChance>0</oldInjuryBaseChance>
@@ -32,17 +51,55 @@
     <isAlive>false</isAlive>
     <tags>
       <li>SightSource</li>
-      <li>HearingSource</li>
-      <li>ConsciousnessSource</li>
-    <li>DriverSeat</li>
-    <li>PassengerSeat</li>
+    <li>GunnerSeat</li>
+    <li>CommanderSeat</li>
+    </tags>
+  </BodyPartDef>
+
+
+    <BodyPartDef>
+      <defName>Tank_Mantlet</defName>
+      <label>mantlet</label>
+      <hitPoints>40</hitPoints>
+      <oldInjuryBaseChance>0</oldInjuryBaseChance>
+      <skinCovered>false</skinCovered>
+      <isSolid>true</isSolid>
+      <isAlive>false</isAlive>
+      <tags>
+        <li>SightSource</li>
+      </tags>
+    </BodyPartDef>
+
+      <BodyPartDef>
+        <defName>Tank_Barrel</defName>
+        <label>barrel</label>
+        <hitPoints>30</hitPoints>
+        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <skinCovered>false</skinCovered>
+        <isSolid>true</isSolid>
+        <isAlive>false</isAlive>
+        <tags>
+          <li>SightSource</li>
+        </tags>
+      </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Tank_Cupola</defName>
+    <label>cupola</label>
+    <hitPoints>20</hitPoints>
+    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <skinCovered>false</skinCovered>
+    <isSolid>true</isSolid>
+    <isAlive>false</isAlive>
+    <tags>
+      <li>SightSource</li>
     </tags>
   </BodyPartDef>
 
   <BodyPartDef>
-   <defName>Truck_Engine</defName>
+   <defName>Tank_Engine</defName>
    <label>engine</label>
-   <hitPoints>30</hitPoints>
+   <hitPoints>60</hitPoints>
    <oldInjuryBaseChance>0</oldInjuryBaseChance>
    <skinCovered>false</skinCovered>
    <isSolid>true</isSolid>
@@ -55,9 +112,9 @@
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>Truck_Transmission</defName>
+    <defName>Tank_Transmission</defName>
     <label>transmission</label>
-    <hitPoints>30</hitPoints>
+    <hitPoints>60</hitPoints>
     <oldInjuryBaseChance>0</oldInjuryBaseChance>
     <skinCovered>false</skinCovered>
     <isSolid>true</isSolid>
@@ -70,7 +127,7 @@
   <BodyPartDef>
    <defName>Fuel_Tanks</defName>
    <label>fuel</label>
-   <hitPoints>10</hitPoints>
+   <hitPoints>30</hitPoints>
    <oldInjuryBaseChance>0</oldInjuryBaseChance>
    <skinCovered>false</skinCovered>
    <isSolid>true</isSolid>
@@ -81,9 +138,9 @@
  </BodyPartDef>
 
  <BodyPartDef>
-  <defName>Wheel_Truck_LFDrive</defName>
-  <label>wheel</label>
-  <hitPoints>15</hitPoints>
+  <defName>Tank_TreadsL</defName>
+  <label>tread</label>
+  <hitPoints>30</hitPoints>
   <oldInjuryBaseChance>0</oldInjuryBaseChance>
   <skinCovered>false</skinCovered>
   <isSolid>true</isSolid>
@@ -94,9 +151,9 @@
 </BodyPartDef>
 
 <BodyPartDef>
- <defName>Wheel_Truck_RFDrive</defName>
- <label>wheel</label>
- <hitPoints>15</hitPoints>
+ <defName>Tank_TreadsR</defName>
+ <label>tread</label>
+ <hitPoints>30</hitPoints>
  <oldInjuryBaseChance>0</oldInjuryBaseChance>
  <skinCovered>false</skinCovered>
  <isSolid>true</isSolid>
@@ -106,61 +163,27 @@
  </tags>
 </BodyPartDef>
 
-<BodyPartDef>
- <defName>Wheel_Truck_LB</defName>
- <label>wheel</label>
- <hitPoints>15</hitPoints>
- <oldInjuryBaseChance>0</oldInjuryBaseChance>
- <skinCovered>false</skinCovered>
- <isSolid>true</isSolid>
- <isAlive>false</isAlive>
- <tags>
-   <li>MovingLimbSegment</li>
- </tags>
-</BodyPartDef>
-
-<BodyPartDef>
- <defName>Wheel_Truck_RB</defName>
- <label>wheel</label>
- <hitPoints>15</hitPoints>
- <oldInjuryBaseChance>0</oldInjuryBaseChance>
- <skinCovered>false</skinCovered>
- <isSolid>true</isSolid>
- <isAlive>false</isAlive>
- <tags>
-   <li>MovingLimbSegment</li>
- </tags>
-</BodyPartDef>
-
 <!-- ===== Truck Body ===== -->
   <BodyDef>
-    <defName>Truck_Body</defName>
-    <label>Truck</label>
+    <defName>Tank_Hull</defName>
+    <label>Tank</label>
     <corePart>
-      <def>Truck_Body</def>
+      <def>Tank_Hull</def>
       <height>Middle</height>
       <depth>Outside</depth>
       <parts>
         <li>
-          <def>Truck_Engine</def>
+          <def>Tank_Engine</def>
           <coverage>0.1</coverage>
           <depth>Inside</depth>
           <height>Bottom</height>
         </li>
 
         <li>
-          <def>Truck_Transmission</def>
+          <def>Tank_Transmission</def>
           <coverage>0.05</coverage>
           <depth>Inside</depth>
           <height>Bottom</height>
-          <groups>
-            <li>HeadAttackTool</li>
-          </groups>
-        </li>
-
-        <li>
-          <def>Truck_Cabin</def>
-          <coverage>0.3</coverage>
         </li>
 
         <li>
@@ -170,29 +193,41 @@
         </li>
 
         <li>
-          <def>Wheel_Truck_LFDrive</def>
-          <coverage>0.01</coverage>
+          <def>Tank_Turret</def>
+          <coverage>0.3</coverage>
+          <height>Top</height>
+          <depth>Outside</depth>
+          <parts>
+            <li>
+              <def>Tank_Cupola</def>
+              <coverage>0.05</coverage>
+              <height>Top</height>
+            </li>
+            <li>
+              <def>Tank_Barrel</def>
+              <coverage>0.2</coverage>
+              <parts>
+                <li>
+                 <def>Tank_Mantlet</def>
+                 <coverage>.3</coverage>
+               </li>
+              </parts>
+            </li>
+            </parts>
+
+        </li>
+
+        <li>
+          <def>Tank_TreadsL</def>
+          <coverage>0.05</coverage>
           <height>Bottom</height>
         </li>
 
         <li>
-          <def>Wheel_Truck_RFDrive</def>
-          <coverage>0.01</coverage>
+          <def>Tank_TreadsR</def>
+          <coverage>0.05</coverage>
           <height>Bottom</height>
         </li>
-
-        <li>
-          <def>Wheel_Truck_LB</def>
-          <coverage>0.01</coverage>
-          <height>Bottom</height>
-        </li>
-
-        <li>
-          <def>Wheel_Truck_RB</def>
-          <coverage>0.01</coverage>
-          <height>Bottom</height>
-        </li>
-
       </parts>
     </corePart>
   </BodyDef>

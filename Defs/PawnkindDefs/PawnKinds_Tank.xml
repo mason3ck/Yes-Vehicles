@@ -2,30 +2,21 @@
 <Defs>
 
   <!-- Truck-->
-  <ThingDef ParentName="Vehicle">
-    <defName>Truck</defName>
-    <label>Truck</label>
-    <description>An all purpose truck used to carry goods over large distances at a much quicker speed</description>
+  <ThingDef ParentName="Vehicled">
+    <defName>Tank</defName>
+    <label>Tank</label>
+    <description>A heavily armored machine designed for the art of modern war</description>
     <statBases>
-      <MoveSpeed>11</MoveSpeed>
-      <CarryingCapacity>200</CarryingCapacity>
-      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <MoveSpeed>6</MoveSpeed>
+      <CarryingCapacity>100</CarryingCapacity>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
       <MeatAmount>0</MeatAmount>
     </statBases>
-    <verbs>
-      <li>
-        <verbClass>Verb_MeleeAttack</verbClass>
-        <defaultCooldownTime>5.00</defaultCooldownTime>
-        <meleeDamageBaseAmount>10</meleeDamageBaseAmount>
-        <meleeDamageDef>Blunt</meleeDamageDef>
-        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-      </li>
-    </verbs>
     <race>
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>CompVehicle_Simple</thinkTreeMain>
-      <body>Truck_Body</body>
+      <body>Tank_Hull</body>
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>10.0</baseHealthScale>
       <lifeStageAges>
@@ -46,19 +37,19 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
     </race>
     <recipes>
-      <li>Vehicle_RepairsTruck</li>
+      <li>Vehicle_RepairsTank</li>
     </recipes>
     <butcherProducts>
-      <Steel>40</Steel>
-      <Plasteel>25</Plasteel>
-      <Component>1</Component>
+      <Steel>200</Steel>
+      <Plasteel>20</Plasteel>
+      <Component>20</Component>
     </butcherProducts>
 	<comps>
     <li Class="CompProperties_Flickable"/>
     <li Class="CompProperties_Breakdownable"/>
     <li Class="CompProperties_Refuelable">
-      <fuelConsumptionRate>70.0</fuelConsumptionRate>
-      <fuelCapacity>100.0</fuelCapacity>
+      <fuelConsumptionRate>100.0</fuelConsumptionRate>
+      <fuelCapacity>200.0</fuelCapacity>
       <fuelFilter>
         <thingDefs>
           <li>Chemfuel</li>
@@ -84,12 +75,14 @@
       <movementHandling>HandlerRequired</movementHandling>
       <weaponHandling>HandlerRequired</weaponHandling>
       <manipulationHandling>Incapable</manipulationHandling>
+      <!-- Determines how much a vehicle can carry -->
+      <cargoCapacity>100</cargoCapacity>
       <!-- Unloads all passengers when health percent reaches below this percentage. -->
-      <ejectIfBelowHealthPercent>0.30</ejectIfBelowHealthPercent>
+      <ejectIfBelowHealthPercent>0.20</ejectIfBelowHealthPercent>
       <!-- If a bullet hits a seat, the passenger is injured by this factor of damage. -->
       <seatHitDamageFactor>1.75</seatHitDamageFactor>
       <!-- Chance of doubling that damage. -->
-      <seatHitCriticalHitChance>0.03</seatHitCriticalHitChance>
+      <seatHitCriticalHitChance>0.04</seatHitCriticalHitChance>
       <canBeDowned>true</canBeDowned>
       <canWiggleWhenDowned>false</canWiggleWhenDowned>
       <soundEntry>Pawn_Mech_Centipede_Wounded</soundEntry>
@@ -103,17 +96,24 @@
 		  <li>
 		    <label>driver</label>
   			<labelPlural>drivers</labelPlural>
-	  		<handlingTypes>Movement, Weapons</handlingTypes>
+	  		<handlingTypes>Movement</handlingTypes>
 		  	<slots>1</slots>
 		  	<slotsToOperate>1</slotsToOperate>
 		  	<slotTag>DriverSeat</slotTag>
 		  </li>
 		  <li>
-		    <label>passenger</label>
-			  <labelPlural>passengers</labelPlural>
+		    <label>gunner</label>
+			  <labelPlural>gunners</labelPlural>
         <handlingTypes>Weapons</handlingTypes>
 		  	<slots>1</slots>
-		  	<slotTag>PassengerSeat</slotTag>
+		  	<slotTag>GunnerSeat</slotTag>
+		  </li>
+      <li>
+		    <label>commander</label>
+			  <labelPlural>commanders</labelPlural>
+        <handlingTypes>Weapons, Movement</handlingTypes>
+		  	<slots>1</slots>
+		  	<slotTag>CommanderSeat</slotTag>
 		  </li>
 		</roles>
 	  </li>
@@ -137,16 +137,16 @@
   </ThingDef>
 
 	<PawnKindDef>
-		<defName>Vehicle_Truck</defName>
-		<label>truck</label>
-		<race>Truck</race>
-		<combatPower>50</combatPower>
+		<defName>Vehicle_Tank</defName>
+		<label>tank</label>
+		<race>Tank</race>
+		<combatPower>200</combatPower>
     <defaultFactionType>PlayerColony</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Vehicles/Truck/Truck</texPath>
+					<texPath>Vehicles/Tank/Tank</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>6,6</drawSize>
 					<shadowData>
@@ -160,7 +160,8 @@
 			<max>0</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>Infantry_Turret</li>
+			<li>Tank_Cannon</li>
+      <li>Rail_Cannon</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -168,7 +169,7 @@
 <!-- *eyeballs the reader* -->
 
 
-  <ThingDef Name="Vehicle" Abstract="True">
+  <ThingDef Name="Vehicled" Abstract="True">
     <thingClass>Pawn</thingClass>
     <category>Pawn</category>
     <selectable>true</selectable>
@@ -178,7 +179,7 @@
     <hasTooltip>true</hasTooltip>
     <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
     <statBases>
-      <Mass>70</Mass>
+      <Mass>200</Mass>
       <PsychicSensitivity>0</PsychicSensitivity>
       <ToxicSensitivity>0</ToxicSensitivity>
       <Flammability>0</Flammability>
