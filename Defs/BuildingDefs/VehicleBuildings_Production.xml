@@ -59,6 +59,7 @@
       <surfaceType>Item</surfaceType>
       <recipes>
         <li>MakeVehicleTruck</li>
+        <li>MakeVehicleTank</li>
       </recipes>
       <inspectorTabs>
         <li>ITab_Bills</li>

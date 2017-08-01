@@ -140,6 +140,9 @@
       <def>Truck_Body</def>
       <height>Middle</height>
       <depth>Outside</depth>
+      <groups>
+        <li>HeadAttackTool</li>
+      </groups>
       <parts>
         <li>
           <def>Truck_Engine</def>
@@ -153,9 +156,6 @@
           <coverage>0.05</coverage>
           <depth>Inside</depth>
           <height>Bottom</height>
-          <groups>
-            <li>HeadAttackTool</li>
-          </groups>
         </li>
 
         <li>

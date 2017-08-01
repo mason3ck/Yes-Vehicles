@@ -7,7 +7,8 @@
     <description>Craft a motorized truck for hauling long distances</description>
     <jobString>Making truck.</jobString>
     <workSpeedStat>SmithingSpeed</workSpeedStat>
-    <effectWorking>Cook</effectWorking>
+		<workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <allowMixingIngredients>true</allowMixingIngredients>
     <workAmount>10000</workAmount>
@@ -18,7 +19,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>300</count>
       </li>
       <li>
         <filter>
@@ -38,7 +39,6 @@
     <products>
       <Vehicle_TruckParts>1</Vehicle_TruckParts>
     </products>
-    <workSkill>Crafting</workSkill>
   </RecipeDef>
 
   <RecipeDef>
@@ -47,7 +47,8 @@
     <description>Craft a mechanized war machine for combat</description>
     <jobString>Making tank.</jobString>
     <workSpeedStat>SmithingSpeed</workSpeedStat>
-    <effectWorking>Cook</effectWorking>
+		<workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <allowMixingIngredients>true</allowMixingIngredients>
     <workAmount>20000</workAmount>
@@ -58,7 +59,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>500</count>
       </li>
       <li>
         <filter>
@@ -66,7 +67,7 @@
             <li>Component</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>20</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -78,7 +79,6 @@
     <products>
       <Vehicle_TankParts>1</Vehicle_TankParts>
     </products>
-    <workSkill>Crafting</workSkill>
   </RecipeDef>
 
 

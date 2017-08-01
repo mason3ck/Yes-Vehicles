@@ -7,8 +7,8 @@
     <label>Truck</label>
     <description>An all purpose truck used to carry goods over large distances at a much quicker speed</description>
     <statBases>
-      <MoveSpeed>11</MoveSpeed>
-      <CarryingCapacity>200</CarryingCapacity>
+      <MoveSpeed>30</MoveSpeed>
+      <CarryingCapacity>100</CarryingCapacity>
       <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
       <MeatAmount>0</MeatAmount>
@@ -32,14 +32,14 @@
         <li>
           <def>MechanoidFullyFormed</def>
           <minAge>0</minAge>
-          <soundWounded>PJ_AT_Damage</soundWounded>
-          <soundDeath>PJ_AT_Damage</soundDeath>
-          <soundCall>PJ_AT_Idle</soundCall>
+          <soundWounded>BulletImpactMetal</soundWounded>
+          <soundDeath>Explosion_Bomb</soundDeath>
+          <soundCall>Vehicle_Idle</soundCall>
         </li>
       </lifeStageAges>
       <soundCallIntervalRange>
-        <min>3000</min>
-        <max>6000</max>
+        <min>50</min>
+        <max>50</max>
       </soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
@@ -50,7 +50,6 @@
     </recipes>
     <butcherProducts>
       <Steel>40</Steel>
-      <Plasteel>25</Plasteel>
       <Component>1</Component>
     </butcherProducts>
 	<comps>
@@ -103,7 +102,7 @@
 		  <li>
 		    <label>driver</label>
   			<labelPlural>drivers</labelPlural>
-	  		<handlingTypes>Movement, Weapons</handlingTypes>
+	  		<handlingTypes>Movement</handlingTypes>
 		  	<slots>1</slots>
 		  	<slotsToOperate>1</slotsToOperate>
 		  	<slotTag>DriverSeat</slotTag>
@@ -160,7 +159,7 @@
 			<max>0</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>Infantry_Turret</li>
+			<li>Light_Weps</li>
 		</weaponTags>
 	</PawnKindDef>
 

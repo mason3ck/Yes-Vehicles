@@ -28,7 +28,7 @@
 			</li>
 		</comps>
 		<graphicData>
-			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
 		</graphicData>
 	</ThingDef>
 
@@ -66,8 +66,8 @@
 	    <projectile>
 		<flyOverhead>False</flyOverhead>
 		<damageDef>Bomb</damageDef>
-		<damageAmountBase>79</damageAmountBase>
-		<speed>125</speed>
+		<damageAmountBase>74</damageAmountBase>
+		<speed>99</speed>
 	    </projectile>
 	  </ThingDef>
 
@@ -82,7 +82,7 @@
 		    <projectile>
 			<flyOverhead>False</flyOverhead>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>70</damageAmountBase>
+			<damageAmountBase>65</damageAmountBase>
 			<speed>205</speed>
 		    </projectile>
 		  </ThingDef>
@@ -98,17 +98,17 @@
 			    <projectile>
 				<flyOverhead>False</flyOverhead>
 				<damageDef>Bullet</damageDef>
-				<damageAmountBase>46</damageAmountBase>
+				<damageAmountBase>33</damageAmountBase>
 				<speed>105</speed>
 			    </projectile>
 			  </ThingDef>
 
 <!-- Specific gun bases, important to alocate graphics -->
 
-  <ThingDef Name="Infantry_TurretBase" ParentName="Vehicle_GunBase" Abstract="True">
+  <ThingDef Name="Burst_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
+			<workSkill>Crafting</workSkill>
       <effectWorking>Smith</effectWorking>
       <soundWorking>Recipe_Smith</soundWorking>
       <recipeUsers>
@@ -123,7 +123,7 @@
 						<li>Tank</li>
 		      </allowedToInstallOn>
 					<installedWeaponGraphic>
-							<texPath>Weps/Turrets/Infantry_Turret</texPath>
+							<texPath>Weps/Turrets/Burst_Cannon</texPath>
 				      <graphicClass>Graphic_Single</graphicClass>
 							<drawSize>6</drawSize>
 					  <shaderType>TransparentPostLight</shaderType>
@@ -138,7 +138,7 @@
     <ThingDef Name="Tank_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
+			<workSkill>Crafting</workSkill>
       <effectWorking>Smith</effectWorking>
       <soundWorking>Recipe_Smith</soundWorking>
       <recipeUsers>
@@ -214,31 +214,31 @@
     <statBases>
       <Mass>6.85</Mass>
       <MarketValue>3200</MarketValue>
-      <AccuracyTouch>0.95</AccuracyTouch>
-      <AccuracyShort>0.85</AccuracyShort>
-      <AccuracyMedium>0.79</AccuracyMedium>
-      <AccuracyLong>0.69</AccuracyLong>
-      <RangedWeapon_Cooldown>5.32</RangedWeapon_Cooldown>
+      <AccuracyTouch>0.94</AccuracyTouch>
+      <AccuracyShort>0.84</AccuracyShort>
+      <AccuracyMedium>0.78</AccuracyMedium>
+      <AccuracyLong>0.66</AccuracyLong>
+      <RangedWeapon_Cooldown>3.32</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>200</Steel>
-      <Plasteel>50</Plasteel>
-      <Component>10</Component>
+      <Steel>150</Steel>
+      <Plasteel>40</Plasteel>
+      <Component>5</Component>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Cannon_Shell</projectileDef>
-        <warmupTime>2.03</warmupTime>
+        <warmupTime>4.03</warmupTime>
         <range>50</range>
-        <soundCast>PJ_ATST_Gun</soundCast>
+        <soundCast>TankCannon_Fire</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>50</muzzleFlashScale>
       </li>
     </verbs>
     <weaponTags>
-	   <li>Tank_Cannon</li>
+	   <li>Heavy_Weps</li>
     </weaponTags>
   </ThingDef>
 
@@ -261,7 +261,7 @@
       <AccuracyShort>0.95</AccuracyShort>
       <AccuracyMedium>0.84</AccuracyMedium>
       <AccuracyLong>0.73</AccuracyLong>
-      <RangedWeapon_Cooldown>4.55</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>3.55</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>150</Steel>
@@ -273,24 +273,24 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Dense_Shell</projectileDef>
-        <warmupTime>3.53</warmupTime>
+        <warmupTime>6.53</warmupTime>
         <range>60</range>
-        <soundCast>PJ_ATST_Gun</soundCast>
+        <soundCast>RailCannon_Fire</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>42</muzzleFlashScale>
       </li>
     </verbs>
     <weaponTags>
-	   <li>Rail_Cannon</li>
+	   <li>Heavy_Weps</li>
     </weaponTags>
   </ThingDef>
 
-    <ThingDef ParentName="Infantry_TurretBase">
-    <defName>Infantry_Turret</defName>
-    <label>Infantry turret</label>
+    <ThingDef ParentName="Burst_CannonBase">
+    <defName>Burst_Cannon</defName>
+    <label>Burst cannon</label>
     <description>A rapid fire cannon for light armor or infantry.</description>
     <graphicData>
-      <texPath>Box/Infantry_Turret</texPath>
+      <texPath>Box/Burst_Cannon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
     </graphicData>
@@ -299,10 +299,10 @@
       <Mass>6.85</Mass>
       <MarketValue>3200</MarketValue>
       <AccuracyTouch>0.90</AccuracyTouch>
-      <AccuracyShort>0.85</AccuracyShort>
-      <AccuracyMedium>0.79</AccuracyMedium>
-      <AccuracyLong>0.69</AccuracyLong>
-      <RangedWeapon_Cooldown>1.32</RangedWeapon_Cooldown>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.71</AccuracyMedium>
+      <AccuracyLong>0.62</AccuracyLong>
+      <RangedWeapon_Cooldown>3.32</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>100</Steel>
@@ -313,9 +313,9 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Small_Bullet</projectileDef>
-        <warmupTime>1.03</warmupTime>
+        <warmupTime>2.33</warmupTime>
         <range>30</range>
-        <soundCast>PJ_ATST_Gun</soundCast>
+        <soundCast>BurstCannon_Fire</soundCast>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
         <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -323,7 +323,7 @@
       </li>
     </verbs>
     <weaponTags>
-	   <li>Infantry_Turret</li>
+	   <li>Light_Weps</li>
     </weaponTags>
   </ThingDef>
 </ThingDefs>

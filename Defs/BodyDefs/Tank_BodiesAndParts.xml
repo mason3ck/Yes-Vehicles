@@ -171,6 +171,9 @@
       <def>Tank_Hull</def>
       <height>Middle</height>
       <depth>Outside</depth>
+      <groups>
+        <li>HeadAttackTool</li>
+      </groups>
       <parts>
         <li>
           <def>Tank_Engine</def>

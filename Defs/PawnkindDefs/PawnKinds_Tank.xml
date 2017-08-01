@@ -10,9 +10,18 @@
       <MoveSpeed>6</MoveSpeed>
       <CarryingCapacity>100</CarryingCapacity>
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
       <MeatAmount>0</MeatAmount>
     </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <defaultCooldownTime>6.00</defaultCooldownTime>
+        <meleeDamageBaseAmount>20</meleeDamageBaseAmount>
+        <meleeDamageDef>Blunt</meleeDamageDef>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </verbs>
     <race>
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>CompVehicle_Simple</thinkTreeMain>
@@ -23,14 +32,14 @@
         <li>
           <def>MechanoidFullyFormed</def>
           <minAge>0</minAge>
-          <soundWounded>PJ_AT_Damage</soundWounded>
-          <soundDeath>PJ_AT_Damage</soundDeath>
-          <soundCall>PJ_AT_Idle</soundCall>
+          <soundWounded>ArtilleryHitThickRoof</soundWounded>
+          <soundDeath>Explosion_Bomb</soundDeath>
+          <soundCall>Vehicle_Idle</soundCall>
         </li>
       </lifeStageAges>
       <soundCallIntervalRange>
-        <min>3000</min>
-        <max>6000</max>
+        <min>50</min>
+        <max>50</max>
       </soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
@@ -108,13 +117,6 @@
 		  	<slots>1</slots>
 		  	<slotTag>GunnerSeat</slotTag>
 		  </li>
-      <li>
-		    <label>commander</label>
-			  <labelPlural>commanders</labelPlural>
-        <handlingTypes>Weapons, Movement</handlingTypes>
-		  	<slots>1</slots>
-		  	<slotTag>CommanderSeat</slotTag>
-		  </li>
 		</roles>
 	  </li>
 
@@ -160,8 +162,8 @@
 			<max>0</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>Tank_Cannon</li>
-      <li>Rail_Cannon</li>
+			<li>Light_Weps</li>
+      <li>Heavy_Weps</li>
 		</weaponTags>
 	</PawnKindDef>
 
