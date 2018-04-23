@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
-  <ThingDef Name="BenchBase" ParentName="BuildingBase" Abstract="True">
+  <thingDef Name="BenchBase" ParentName="BuildingBase" Abstract="True">
     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <canOverlapZones>false</canOverlapZones>
@@ -17,15 +17,15 @@
 		<placeWorkers>
 			<li>PlaceWorker_ReportWorkSpeedPenalties</li>
 		</placeWorkers>
-  </ThingDef>
+  </thingDef>
 
 
 
-    <ThingDef ParentName="BenchBase">
-      <DefName>VehicleTable</DefName>
+    <thingDef ParentName="BenchBase">
+      <defName>VehicleTable</defName>
       <label>vehicle table</label>
-      <ThingClass>Building_WorkTable</ThingClass>
-      <Description>A table for manufacturing various vehicles</Description>
+      <thingClass>Building_WorkTable</thingClass>
+      <description>A table for manufacturing various vehicles</description>
       <graphicData>
         <texPath>Table/VehicleTable</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
@@ -37,11 +37,11 @@
           <cornerBR>Damage/Corner</cornerBR>
         </damageData>
       </graphicData>
-      <CostList>
+      <costList>
         <Steel>150</Steel>
         <Component>5</Component>
-      </CostList>
-      <AltitudeLayer>Building</AltitudeLayer>
+      </costList>
+      <altitudeLayer>Building</altitudeLayer>
       <fillPercent>0.5</fillPercent>
       <useHitPoints>True</useHitPoints>
       <statBases>
@@ -50,9 +50,9 @@
         <Flammability>1.0</Flammability>
         <Cleanliness>-2</Cleanliness>
       </statBases>
-      <Size>(3,1)</Size>
-      <DesignationCategory>Production</DesignationCategory>
-      <Passability>PassThroughOnly</Passability>
+      <size>(3,1)</size>
+      <designationCategory>Production</designationCategory>
+      <passability>PassThroughOnly</passability>
       <pathCost>70</pathCost>
       <hasInteractionCell>True</hasInteractionCell>
       <interactionCellOffset>(0,0,-1)</interactionCellOffset>
@@ -60,6 +60,7 @@
       <recipes>
         <li>MakeVehicleTruck</li>
         <li>MakeVehicleTank</li>
+        <li>MakeVehicleAPC</li>
       </recipes>
       <inspectorTabs>
         <li>ITab_Bills</li>
@@ -94,7 +95,7 @@
       <placeWorkers>
         <li>PlaceWorker_ShowFacilitiesConnections</li>
       </placeWorkers>
-    </ThingDef>
+    </thingDef>
 
 
-</ThingDefs>
+</Defs>

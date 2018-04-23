@@ -2,9 +2,9 @@
 <ModMetaData>
 	<name>Yes, Vehicles</name>
 	<author>Mason J. Caboose</author>
-	<targetVersion>0.17.0</targetVersion>
+	<targetVersion>0.18.0</targetVersion>
 	<description>
-[V: 2.1]
+[V: 2.6]
 A true implementation of vehicles into RimWorld!
 
 First off, a big thank you to Jecrell, without him none of you would have this!
@@ -24,7 +24,8 @@ Upon assigning a driver, you must instruct the vehicle to draft itself for glori
 -Save Load Safe (but once you go vehicular, you cant turn back >:D )
 -No one else should show up on your door with any of this stuff
 -You need both a gunner and a driver to fight.
--Only the infantry turret fits on the Truck.
+-Undrafting usually leads to vehicles hauling
+-The APC can only use the Burst cannon.
 -Bugs will be plenty in this mod, but hopefully that'll to break your game!
 		</description>
 </ModMetaData>
