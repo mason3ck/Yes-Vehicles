@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
   <RecipeDef>
     <defName>MakeVehicleTruck</defName>
@@ -11,7 +11,7 @@
     <effectWorking>Repair</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <allowMixingIngredients>true</allowMixingIngredients>
-    <workAmount>10000</workAmount>
+    <workAmount>4000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -51,7 +51,7 @@
     <effectWorking>Repair</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <allowMixingIngredients>true</allowMixingIngredients>
-    <workAmount>20000</workAmount>
+    <workAmount>6000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -81,5 +81,43 @@
     </products>
   </RecipeDef>
 
-
-</RecipeDefs>
+    <RecipeDef>
+      <defName>MakeVehicleAPC</defName>
+      <label>make APC</label>
+      <description>Craft a armored truck for transporting soldiers</description>
+      <jobString>Making APC.</jobString>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+  		<workSkill>Crafting</workSkill>
+      <effectWorking>Repair</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <allowMixingIngredients>true</allowMixingIngredients>
+      <workAmount>5000</workAmount>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Steel</li>
+            </thingDefs>
+          </filter>
+          <count>400</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Component</li>
+            </thingDefs>
+          </filter>
+          <count>20</count>
+        </li>
+      </ingredients>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Steel</li>
+          <li>Component</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+        <Vehicle_APCParts>1</Vehicle_APCParts>
+      </products>
+    </RecipeDef>
+</Defs>

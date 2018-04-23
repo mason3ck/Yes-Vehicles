@@ -2,15 +2,15 @@
 <Defs>
 
   <!-- Truck-->
-  <ThingDef ParentName="Vehicled">
+  <thingDef ParentName="Vehicle">
     <defName>Tank</defName>
     <label>Tank</label>
     <description>A heavily armored machine designed for the art of modern war</description>
     <statBases>
-      <MoveSpeed>6</MoveSpeed>
+      <MoveSpeed>10</MoveSpeed>
       <CarryingCapacity>100</CarryingCapacity>
-      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
       <MeatAmount>0</MeatAmount>
     </statBases>
     <verbs>
@@ -57,14 +57,14 @@
     <li Class="CompProperties_Flickable"/>
     <li Class="CompProperties_Breakdownable"/>
     <li Class="CompProperties_Refuelable">
-      <fuelConsumptionRate>100.0</fuelConsumptionRate>
+      <fuelConsumptionRate>50.0</fuelConsumptionRate>
       <fuelCapacity>200.0</fuelCapacity>
       <fuelFilter>
         <thingDefs>
           <li>Chemfuel</li>
         </thingDefs>
       </fuelFilter>
-      <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      <consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
     </li>
 	  <li Class="CompVehicle.CompProperties_Vehicle">
       <!--
@@ -89,9 +89,9 @@
       <!-- Unloads all passengers when health percent reaches below this percentage. -->
       <ejectIfBelowHealthPercent>0.20</ejectIfBelowHealthPercent>
       <!-- If a bullet hits a seat, the passenger is injured by this factor of damage. -->
-      <seatHitDamageFactor>1.75</seatHitDamageFactor>
+      <seatHitDamageFactor>0.25</seatHitDamageFactor>
       <!-- Chance of doubling that damage. -->
-      <seatHitCriticalHitChance>0.04</seatHitCriticalHitChance>
+      <seatHitCriticalHitChance>0.1</seatHitCriticalHitChance>
       <canBeDowned>true</canBeDowned>
       <canWiggleWhenDowned>false</canWiggleWhenDowned>
       <soundEntry>Pawn_Mech_Centipede_Wounded</soundEntry>
@@ -103,19 +103,15 @@
       <labelBroken>Broken</labelBroken>
 		<roles>
 		  <li>
-		    <label>driver</label>
-  			<labelPlural>drivers</labelPlural>
-	  		<handlingTypes>Movement</handlingTypes>
+		    <label>operator</label>
+  			<labelPlural>operators</labelPlural>
+	  		<handlingTypes>
+         <li>Movement</li>
+         <li>Weapons</li>
+        </handlingTypes>
 		  	<slots>1</slots>
 		  	<slotsToOperate>1</slotsToOperate>
-		  	<slotTag>DriverSeat</slotTag>
-		  </li>
-		  <li>
-		    <label>gunner</label>
-			  <labelPlural>gunners</labelPlural>
-        <handlingTypes>Weapons</handlingTypes>
-		  	<slots>1</slots>
-		  	<slotTag>GunnerSeat</slotTag>
+		  	<slotTag>OperatorSeat</slotTag>
 		  </li>
 		</roles>
 	  </li>
@@ -136,7 +132,7 @@
 		<secondsBetweenSteps>0.5</secondsBetweenSteps>
   </li-->
 	</comps>
-  </ThingDef>
+  </thingDef>
 
 	<PawnKindDef>
 		<defName>Vehicle_Tank</defName>
@@ -150,7 +146,7 @@
 				<bodyGraphicData>
 					<texPath>Vehicles/Tank/Tank</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>6,6</drawSize>
+					<drawSize>7,7</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>
@@ -166,50 +162,5 @@
       <li>Heavy_Weps</li>
 		</weaponTags>
 	</PawnKindDef>
-
-<!-- Bases no one will ever read. -->
-<!-- *eyeballs the reader* -->
-
-
-  <ThingDef Name="Vehicled" Abstract="True">
-    <thingClass>Pawn</thingClass>
-    <category>Pawn</category>
-    <selectable>true</selectable>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Pawn</altitudeLayer>
-    <useHitPoints>false</useHitPoints>
-    <hasTooltip>true</hasTooltip>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-    <statBases>
-      <Mass>200</Mass>
-      <PsychicSensitivity>0</PsychicSensitivity>
-      <ToxicSensitivity>0</ToxicSensitivity>
-      <Flammability>0</Flammability>
-      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
-      <ComfyTemperatureMax>250</ComfyTemperatureMax>
-    </statBases>
-    <race>
-      <fleshType>Mechanoid</fleshType>
-      <needsRest>false</needsRest>
-      <hasGenders>false</hasGenders>
-      <foodType>None</foodType>
-    </race>
-    <inspectorTabs>
-      <li>ITab_Pawn_Health</li>
-      <li>ITab_Pawn_Needs</li>
-      <li>ITab_Pawn_Character</li>
-      <li>ITab_Pawn_Training</li>
-      <li>ITab_Pawn_Gear</li>
-      <li>ITab_Pawn_Guest</li>
-      <li>ITab_Pawn_Prisoner</li>
-      <li>ITab_Pawn_Social</li>
-    </inspectorTabs>
-    <comps>
-      <li>
-        <compClass>CompAttachBase</compClass>
-      </li>
-    </comps>
-    <drawGUIOverlay>true</drawGUIOverlay>
-  </ThingDef>
 
 </Defs>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
 <!-- General Bases -->
 
-<ThingDef Abstract="True" Name="Vehicle_BaseWeapon">
+<thingDef Abstract="True" Name="Vehicle_BaseWeapon">
 		<thingClass>ThingWithComps</thingClass>
 		<category>Item</category>
 		<drawGUIOverlay>true</drawGUIOverlay>
@@ -30,9 +30,9 @@
 		<graphicData>
 			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
 		</graphicData>
-	</ThingDef>
+	</thingDef>
 
-  <ThingDef Name="Vehicle_GunBase" Abstract="True" ParentName="Vehicle_BaseWeapon">
+  <thingDef Name="Vehicle_GunBase" Abstract="True" ParentName="Vehicle_BaseWeapon">
 		<techLevel>Industrial</techLevel>
 		<smeltable>true</smeltable>
 		<thingCategories>
@@ -51,33 +51,33 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-  </ThingDef>
+  </thingDef>
 
 	<!--Bullet types -->
 
-	  <ThingDef ParentName="BaseBullet">
+	  <thingDef ParentName="BaseBullet">
 	    <defName>Cannon_Shell</defName>
 	    <label>Cannon shell</label>
 	    <graphicData>
 	      <texPath>Weps/Projectiles/Cannon_Shell</texPath>
 	      <graphicClass>Graphic_Single</graphicClass>
-		  <shaderType>TransparentPostLight</shaderType>
+		  <!--shaderType>TransparentPostLight</shaderType-->
 	  </graphicData>
 	    <projectile>
 		<flyOverhead>False</flyOverhead>
-		<damageDef>Bomb</damageDef>
+		<damageDef>Bullet</damageDef>
 		<damageAmountBase>74</damageAmountBase>
 		<speed>99</speed>
 	    </projectile>
-	  </ThingDef>
+	  </thingDef>
 
-		 <ThingDef ParentName="BaseBullet">
+		 <thingDef ParentName="BaseBullet">
 		    <defName>Dense_Shell</defName>
 		    <label>Dense shell</label>
 		    <graphicData>
 		      <texPath>Weps/Projectiles/Dense_Shell</texPath>
 		      <graphicClass>Graphic_Single</graphicClass>
-			  <shaderType>TransparentPostLight</shaderType>
+					<!--shaderType>TransparentPostLight</shaderType-->
 		</graphicData>
 		    <projectile>
 			<flyOverhead>False</flyOverhead>
@@ -85,27 +85,27 @@
 			<damageAmountBase>65</damageAmountBase>
 			<speed>205</speed>
 		    </projectile>
-		  </ThingDef>
+		  </thingDef>
 
-			 <ThingDef ParentName="BaseBullet">
+			 <thingDef ParentName="BaseBullet">
 			    <defName>Small_Bullet</defName>
 			    <label>Small bullet</label>
 			    <graphicData>
-			      <texPath>Weps/Projectiles/Bullet_Small</texPath>
+			      <texPath>Things/Projectile/Bullet_Small</texPath>
 			      <graphicClass>Graphic_Single</graphicClass>
-				  <shaderType>TransparentPostLight</shaderType>
-			  </graphicData>
+						<!--shaderType>TransparentPostLight</shaderType-->
+			  	</graphicData>
 			    <projectile>
-				<flyOverhead>False</flyOverhead>
-				<damageDef>Bullet</damageDef>
-				<damageAmountBase>33</damageAmountBase>
-				<speed>105</speed>
+							<flyOverhead>False</flyOverhead>
+							<damageDef>Bullet</damageDef>
+							<damageAmountBase>33</damageAmountBase>
+							<speed>105</speed>
 			    </projectile>
-			  </ThingDef>
+			  </thingDef>
 
 <!-- Specific gun bases, important to alocate graphics -->
 
-  <ThingDef Name="Burst_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
+  <thingDef Name="Burst_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
@@ -133,9 +133,9 @@
 				<workEffect>Repair</workEffect>
 	   </li>
      </comps>
-  </ThingDef>
+  </thingDef>
 
-    <ThingDef Name="Tank_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
+    <thingDef Name="Tank_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
@@ -165,9 +165,9 @@
 		  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
 	   </li>
  </comps>
-  </ThingDef>
+  </thingDef>
 
-	    <ThingDef Name="Rail_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
+	    <thingDef Name="Rail_CannonBase" ParentName="Vehicle_GunBase" Abstract="True">
 	    <recipeMaker>
 	      <workSpeedStat>SmithingSpeed</workSpeedStat>
 	      <workSkill>Crafting</workSkill>
@@ -197,11 +197,11 @@
 			  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
 		   </li>
 		 </comps>
-	  </ThingDef>
+	  </thingDef>
 
 <!-- actual Gun defs -->
 
-    <ThingDef ParentName="Tank_CannonBase">
+    <thingDef ParentName="Tank_CannonBase">
     <defName>Tank_Cannon</defName>
     <label>Tank cannon</label>
     <description>A powerful cannon for use on a tank, capable of sending exploding shells accurately at the enemy.</description>
@@ -222,14 +222,14 @@
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <Plasteel>40</Plasteel>
+      <Plasteel>20</Plasteel>
       <Component>5</Component>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>Cannon_Shell</projectileDef>
+        <defaultProjectile>Cannon_Shell</defaultProjectile>
         <warmupTime>4.03</warmupTime>
         <range>50</range>
         <soundCast>TankCannon_Fire</soundCast>
@@ -240,11 +240,11 @@
     <weaponTags>
 	   <li>Heavy_Weps</li>
     </weaponTags>
-  </ThingDef>
+  </thingDef>
 
 
 
-    <ThingDef ParentName="Rail_CannonBase">
+    <thingDef ParentName="Rail_CannonBase">
     <defName>Rail_Cannon</defName>
     <label>Rail cannon</label>
     <description>A pin point cannon capable of delivering a dense round down the battlefield quickly.</description>
@@ -265,14 +265,14 @@
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <Plasteel>80</Plasteel>
-      <Component>15</Component>
+      <Plasteel>40</Plasteel>
+      <Component>20</Component>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>Dense_Shell</projectileDef>
+        <defaultProjectile>Dense_Shell</defaultProjectile>
         <warmupTime>6.53</warmupTime>
         <range>60</range>
         <soundCast>RailCannon_Fire</soundCast>
@@ -283,10 +283,10 @@
     <weaponTags>
 	   <li>Heavy_Weps</li>
     </weaponTags>
-  </ThingDef>
+  </thingDef>
 
-    <ThingDef ParentName="Burst_CannonBase">
-    <defName>Burst_Cannon</defName>
+    <thingDef ParentName="Burst_CannonBase">
+    <defName>Infantry_Turret</defName>
     <label>Burst cannon</label>
     <description>A rapid fire cannon for light armor or infantry.</description>
     <graphicData>
@@ -306,13 +306,13 @@
     </statBases>
     <costList>
       <Steel>100</Steel>
-      <Component>5</Component>
+      <Component>10</Component>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>Small_Bullet</projectileDef>
+        <defaultProjectile>Small_Bullet</defaultProjectile>
         <warmupTime>2.33</warmupTime>
         <range>30</range>
         <soundCast>BurstCannon_Fire</soundCast>
@@ -325,5 +325,5 @@
     <weaponTags>
 	   <li>Light_Weps</li>
     </weaponTags>
-  </ThingDef>
-</ThingDefs>
+  </thingDef>
+</Defs>

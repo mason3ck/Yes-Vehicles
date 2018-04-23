@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
   <RecipeDef>
 		<defName>Vehicle_RepairsTruck</defName>
@@ -15,7 +15,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>20</count>
 			</li>
 			<li>
 				<filter>
@@ -23,7 +23,7 @@
 						<li>Component</li>
 					</thingDefs>
 				</filter>
-				<count>2</count>
+				<count>1</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -49,15 +49,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>100</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Plasteel</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
+				<count>25</count>
 			</li>
 			<li>
 				<filter>
@@ -65,17 +57,16 @@
 						<li>Component</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>1</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
       <thingDefs>
 				<li>Steel</li>
-				<li>Plasteel</li>
 				<li>Component</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	<effectWorking>Repair</effectWorking>
   </RecipeDef>
 
-</RecipeDefs>
+</Defs>
